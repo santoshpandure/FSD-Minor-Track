@@ -1,0 +1,316 @@
+Q1 . Simple Contact Form: Create an HTML form for a contact page. Include fields for:
+Name (text input)
+Email (email input)
+Subject (text input)
+Message (textarea)
+Submit button
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Contact Form</title>
+</head>
+<body>
+  <h1>Contact Us</h1>
+
+  <!-- HTML Form starts -->
+  <form>
+    <!-- Name input -->
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <!-- Email input -->
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <!-- Subject input -->
+    <label for="subject">Subject:</label><br>
+    <input type="text" id="subject" name="subject"><br><br>
+
+    <!-- Message textarea -->
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="5" cols="30"></textarea><br><br>
+
+    <!-- Submit button -->
+    <input type="submit" value="Send Message">
+  </form>
+</body>
+</html>
+
+
+Q2. User Registration Form: Design a registration form with fields for:
+Username (text input)
+Password (password input)
+Confirm Password (password input)
+Gender (radio buttons)
+Country (dropdown select with multiple options)
+Accept Terms & Conditions (checkbox)
+Register button
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Registration Form</title>
+</head>
+<body>
+  <h1>User Registration</h1>
+
+  <!-- Registration form starts -->
+  <form>
+    <!-- Username -->
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <!-- Password -->
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <!-- Confirm Password -->
+    <label for="confirm">Confirm Password:</label><br>
+    <input type="password" id="confirm" name="confirm" required><br><br>
+
+    <!-- Gender (radio buttons) -->
+    <label>Gender:</label><br>
+    <input type="radio" id="male" name="gender" value="Male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="Female">
+    <label for="female">Female</label><br><br>
+
+    <!-- Country (dropdown select) -->
+    <label for="country">Country:</label><br>
+    <select id="country" name="country">
+      <option value="">--Select Country--</option>
+      <option value="india">India</option>
+      <option value="usa">USA</option>
+      <option value="uk">UK</option>
+      <option value="australia">Australia</option>
+    </select><br><br>
+
+    <!-- Accept Terms & Conditions (checkbox) -->
+    <input type="checkbox" id="terms" name="terms" required>
+    <label for="terms">I accept the Terms & Conditions</label><br><br>
+
+    <!-- Register button -->
+    <input type="submit" value="Register">
+  </form>
+</body>
+</html>
+
+
+
+Q3. Appointment Booking Form: Build a form for booking an appointment. (Utilize HTML5)
+Date (date input)
+Time (time input)
+Number of attendees (number input with min/max values)
+Preferred color (color input)
+Submit button
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Appointment Booking Form</title>
+</head>
+<body>
+  <h1>Book an Appointment</h1>
+
+  <!-- Appointment form starts -->
+  <form>
+    <!-- Date input -->
+    <label for="date">Select Date:</label><br>
+    <input type="date" id="date" name="date" required><br><br>
+
+    <!-- Time input -->
+    <label for="time">Select Time:</label><br>
+    <input type="time" id="time" name="time" required><br><br>
+
+    <!-- Number of attendees -->
+    <label for="attendees">Number of Attendees:</label><br>
+    <input type="number" id="attendees" name="attendees" min="1" max="10" required><br><br>
+
+    <!-- Preferred color -->
+    <label for="color">Preferred Color:</label><br>
+    <input type="color" id="color" name="color"><br><br>
+
+    <!-- Submit button -->
+    <input type="submit" value="Book Appointment">
+  </form>
+</body>
+</html>
+
+
+
+ Q4. Feedback Form with Range and Search: Develop a feedback form that includes:
+Rating (range input with a label indicating the value)
+Search for a specific product/service (search input)
+User's website (URL input)
+Phone number (tel input)
+Submit button
+Structuring Forms with Fieldset and Legend:
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Form</title>
+  <script>
+    // Simple script to show the range value dynamically
+    function showRating(value) {
+      document.getElementById("ratingValue").innerText = value;
+    }
+  </script>
+</head>
+<body>
+  <h1>Feedback Form</h1>
+
+  <!-- Feedback form starts -->
+  <form>
+    <!-- Group all fields using fieldset -->
+    <fieldset>
+      <legend>Provide Your Feedback</legend>
+
+      <!-- Rating with range -->
+      <label for="rating">Rate our Service (1–10):</label><br>
+      <input type="range" id="rating" name="rating" min="1" max="10" value="5" 
+             oninput="showRating(this.value)">
+      <span id="ratingValue">5</span><br><br>
+
+      <!-- Search input -->
+      <label for="search">Search Product/Service:</label><br>
+      <input type="search" id="search" name="search" placeholder="Enter product/service"><br><br>
+
+      <!-- Website input -->
+      <label for="website">Your Website:</label><br>
+      <input type="url" id="website" name="website" placeholder="https://example.com"><br><br>
+
+      <!-- Phone input -->
+      <label for="phone">Phone Number:</label><br>
+      <input type="tel" id="phone" name="phone" placeholder="+91-9876543210"><br><br>
+
+      <!-- Submit button -->
+      <input type="submit" value="Submit Feedback">
+    </fieldset>
+  </form>
+</body>
+</html>
+
+
+
+Q5. Multi-Section Application Form: Create an application form divided into sections using <fieldset> and <legend>:
+Personal Information: Name, Address, Phone, Email
+Educational Background: Degree, University, Graduation Year
+Experience: Job Title, Company, Years of Experience (textarea for description)
+Submit button
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Application Form</title>
+</head>
+<body>
+  <h1>Application Form</h1>
+
+  <!-- Form starts -->
+  <form>
+    <!-- Personal Information Section -->
+    <fieldset>
+      <legend>Personal Information</legend>
+      
+      <label for="name">Full Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="address">Address:</label><br>
+      <input type="text" id="address" name="address" required><br><br>
+
+      <label for="phone">Phone:</label><br>
+      <input type="tel" id="phone" name="phone" placeholder="+91-9876543210"><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+    </fieldset>
+
+    <br>
+
+    <!-- Educational Background Section -->
+    <fieldset>
+      <legend>Educational Background</legend>
+      
+      <label for="degree">Degree:</label><br>
+      <input type="text" id="degree" name="degree" required><br><br>
+
+      <label for="university">University:</label><br>
+      <input type="text" id="university" name="university"><br><br>
+
+      <label for="gradyear">Graduation Year:</label><br>
+      <input type="number" id="gradyear" name="gradyear" min="1900" max="2100"><br><br>
+    </fieldset>
+
+    <br>
+
+    <!-- Experience Section -->
+    <fieldset>
+      <legend>Work Experience</legend>
+      
+      <label for="jobtitle">Job Title:</label><br>
+      <input type="text" id="jobtitle" name="jobtitle"><br><br>
+
+      <label for="company">Company:</label><br>
+      <input type="text" id="company" name="company"><br><br>
+
+      <label for="years">Years of Experience:</label><br>
+      <input type="number" id="years" name="years" min="0" max="50"><br><br>
+
+      <label for="desc">Job Description:</label><br>
+      <textarea id="desc" name="desc" rows="4" cols="40"></textarea><br><br>
+    </fieldset>
+
+    <br>
+
+    <!-- Submit Button -->
+    <input type="submit" value="Submit Application">
+  </form>
+</body>
+</html>
+
+
+Q6. Feedback Form: 
+Build a simple feedback or contact form with: 
+Name (text) 
+Email (email) 
+Subject (text) 
+Message (textarea) 
+File upload for attachments (file, with type="file")
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Form</title>
+</head>
+<body>
+  <h1>Feedback Form</h1>
+
+  <!-- Feedback form starts -->
+  <form>
+    <!-- Name -->
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <!-- Email -->
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <!-- Subject -->
+    <label for="subject">Subject:</label><br>
+    <input type="text" id="subject" name="subject"><br><br>
+
+    <!-- Message -->
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="5" cols="40"></textarea><br><br>
+
+    <!-- File Upload -->
+    <label for="file">Attach File:</label><br>
+    <input type="file" id="file" name="file"><br><br>
+
+    <!-- Submit Button -->
+    <input type="submit" value="Submit Feedback">
+  </form>
+</body>
+</html>
+
+
