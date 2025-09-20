@@ -1,0 +1,345 @@
+Assignment No-3
+
+Q1.  Blog Post Structure -Create an HTML page representing a single blog post. Utilize the following semantic tags to structure the content:
+<header> for the blog's main header (e.g., site title, navigation).
+<main> to encapsulate the primary content of the blog post.
+<article> for the individual blog post content itself.
+<section> within the <article> to divide the post into logical sections (e.g., introduction, main points, conclusion).
+<aside> for a sidebar containing related links or author information.
+<footer> for the blog post's footer (e.g., copyright, social media links).
+<figure> and <figcaption> for an image with a caption within the article.
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Blog Post</title>
+</head>
+<body>
+  <!-- Blog Header -->
+  <header>
+    <h1>My Coding Blog</h1>
+    <nav>
+      <a href="#">Home</a> | 
+      <a href="#">About</a> | 
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main blog content -->
+  <main>
+    <!-- Blog post -->
+    <article>
+      <h2>Learning HTML5 Semantic Tags</h2>
+      <p><em>Published on Aug 20, 2025 by John Doe</em></p>
+
+      <!-- Image with caption -->
+      <figure>
+        <img src="https://via.placeholder.com/600x250" alt="HTML5 Semantic Tags Example">
+        <figcaption>Fig.1 – Example of semantic HTML5 structure.</figcaption>
+      </figure>
+
+      <!-- Sections inside article -->
+      <section>
+        <h3>Introduction</h3>
+        <p>HTML5 introduced semantic tags that make webpages more meaningful and accessible.</p>
+      </section>
+
+      <section>
+        <h3>Main Points</h3>
+        <p>Some important semantic tags are &lt;header&gt;, &lt;main&gt;, &lt;article&gt;, &lt;section&gt;, &lt;aside&gt;, and &lt;footer&gt;.</p>
+      </section>
+
+      <section>
+        <h3>Conclusion</h3>
+        <p>Using semantic HTML improves readability for both developers and search engines.</p>
+      </section>
+    </article>
+
+    <!-- Sidebar / Extra info -->
+    <aside>
+      <h3>About the Author</h3>
+      <p>John Doe is a web developer who loves teaching HTML and CSS.</p>
+
+      <h3>Related Links</h3>
+      <ul>
+        <li><a href="#">Getting Started with HTML5</a></li>
+        <li><a href="#">Why Semantic Tags Matter</a></li>
+        <li><a href="#">SEO Best Practices</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 My Coding Blog | Follow us on 
+      <a href="#">Twitter</a>, 
+      <a href="#">LinkedIn</a>
+    </p>
+  </footer>
+</body>
+</html>
+
+Q2. Product Page Layout -Design an HTML page for a product on an e-commerce website. Employ semantic tags to organize the information:
+<header> for the website's navigation and logo.
+<main> for the core product information.
+<section> to group different aspects of the product (e.g., product description, specifications, reviews).
+<article> within a section to represent individual customer reviews.
+<nav> for product-specific navigation (e.g., tabs for "Description," "Reviews," "Q&A").
+<footer> for general website information.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Page - Smartwatch</title>
+</head>
+<body>
+  <!-- Website Header -->
+  <header>
+    <h1>ShopEasy</h1>
+    <nav>
+      <a href="#">Home</a> | 
+      <a href="#">Products</a> | 
+      <a href="#">Cart</a> | 
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Product Content -->
+  <main>
+    <h2>Smartwatch X200</h2>
+    <img src="https://via.placeholder.com/300x200" alt="Smartwatch X200">
+
+    <!-- Product-specific navigation -->
+    <nav>
+      <a href="#description">Description</a> | 
+      <a href="#specs">Specifications</a> | 
+      <a href="#reviews">Reviews</a> | 
+      <a href="#qa">Q&A</a>
+    </nav>
+
+    <!-- Sections -->
+    <section id="description">
+      <h3>Product Description</h3>
+      <p>The Smartwatch X200 is your ultimate fitness and productivity companion. 
+         Stay connected, track health metrics, and enjoy stylish design.</p>
+    </section>
+
+    <section id="specs">
+      <h3>Specifications</h3>
+      <ul>
+        <li>Display: 1.5" AMOLED</li>
+        <li>Battery Life: 7 days</li>
+        <li>Water Resistant: 50m</li>
+        <li>Connectivity: Bluetooth, Wi-Fi</li>
+      </ul>
+    </section>
+
+    <section id="reviews">
+      <h3>Customer Reviews</h3>
+      
+      <!-- Each review is an article -->
+      <article>
+        <h4>John Smith</h4>
+        <p><strong>Rating:</strong> ★★★★☆</p>
+        <p>I love the design and battery life! The health tracking is very accurate.</p>
+      </article>
+
+      <article>
+        <h4>Emily Johnson</h4>
+        <p><strong>Rating:</strong> ★★★☆☆</p>
+        <p>Good features, but the strap quality could be better.</p>
+      </article>
+    </section>
+
+    <section id="qa">
+      <h3>Questions & Answers</h3>
+      <p><strong>Q:</strong> Is this watch compatible with iOS?  
+         <br><strong>A:</strong> Yes, it works with both iOS and Android devices.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ShopEasy Inc. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </footer>
+</body>
+</html>
+
+
+ Q3. Portfolio Website Section - Build a section of a personal portfolio website. Focus on showcasing projects using semantic HTML:
+<section> to define the "Projects" area.
+<article> for each individual project entry.
+<header> within each <article> for the project title and date.
+<figure> and <figcaption> for project screenshots or mockups.
+<details> and <summary> to create an expandable section for project details or a "read more" feature.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio - Projects</title>
+</head>
+<body>
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>My Projects</h2>
+
+    <!-- Project 1 -->
+    <article>
+      <header>
+        <h3>Weather App</h3>
+        <p><small>Completed: Jan 2025</small></p>
+      </header>
+      
+      <!-- Project screenshot -->
+      <figure>
+        <img src="https://via.placeholder.com/300x200" alt="Weather App Screenshot">
+        <figcaption>A simple weather forecast web app built with HTML, CSS, and JavaScript.</figcaption>
+      </figure>
+
+      <!-- Expandable details -->
+      <details>
+        <summary>Read more</summary>
+        <p>This app fetches real-time weather data using an open API. 
+           Features include city-based search, temperature display, and 5-day forecast.</p>
+      </details>
+    </article>
+
+    <hr>
+
+    <!-- Project 2 -->
+    <article>
+      <header>
+        <h3>Portfolio Website</h3>
+        <p><small>Completed: Dec 2024</small></p>
+      </header>
+
+      <figure>
+        <img src="https://via.placeholder.com/300x200" alt="Portfolio Website Screenshot">
+        <figcaption>A responsive personal portfolio website to showcase skills and projects.</figcaption>
+      </figure>
+
+      <details>
+        <summary>Read more</summary>
+        <p>Built using semantic HTML5 and CSS3. 
+           Includes sections for About Me, Projects, Contact Form, and Resume download option.</p>
+      </details>
+    </article>
+
+    <hr>
+
+    <!-- Project 3 -->
+    <article>
+      <header>
+        <h3>E-commerce Product Page</h3>
+        <p><small>Completed: Nov 2024</small></p>
+      </header>
+
+      <figure>
+        <img src="https://via.placeholder.com/300x200" alt="E-commerce Product Page Screenshot">
+        <figcaption>A mockup of an e-commerce product page with cart functionality.</figcaption>
+      </figure>
+
+      <details>
+        <summary>Read more</summary>
+        <p>This page demonstrates product details, specifications, customer reviews, 
+           and an interactive shopping cart. Designed with HTML, CSS, and a little JavaScript.</p>
+      </details>
+    </article>
+  </section>
+</body>
+</html>
+
+
+
+
+
+Q4. News Article Page - Construct an HTML page for a news article. Apply semantic tags to enhance its structure:
+<header> for the news website's branding and main navigation.
+<main> containing the primary news article content.
+<article> for the news story itself.
+<section> within the article to separate different parts of the story (e.g., lead paragraph, main body, related articles).
+<aside> for a sidebar with trending news or advertisements.
+<footer> for the article's author information and publication date.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Times - News Article</title>
+</head>
+<body>
+  <!-- Website Header -->
+  <header>
+    <h1>Daily Times</h1>
+    <nav>
+      <a href="#">Home</a> | 
+      <a href="#">World</a> | 
+      <a href="#">Politics</a> | 
+      <a href="#">Sports</a> | 
+      <a href="#">Technology</a>
+    </nav>
+    <hr>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- News Article -->
+    <article>
+      <header>
+        <h2>New Tech Innovation Shakes the Market</h2>
+        <p><small>Published: Aug 20, 2025</small></p>
+      </header>
+
+      <!-- Lead Paragraph -->
+      <section>
+        <p><strong>Silicon Valley:</strong> A groundbreaking technology was unveiled today, 
+        promising to revolutionize the way we interact with devices.</p>
+      </section>
+
+      <!-- Main Body -->
+      <section>
+        <h3>Impact on Industry</h3>
+        <p>Experts believe this innovation could significantly change consumer electronics, 
+        making them more efficient and user-friendly. Startups and big corporations alike are 
+        rushing to adapt.</p>
+      </section>
+
+      <!-- Related Articles -->
+      <section>
+        <h3>Related Articles</h3>
+        <ul>
+          <li><a href="#">AI Set to Dominate Next Decade</a></li>
+          <li><a href="#">Top 10 Startups to Watch in 2025</a></li>
+          <li><a href="#">How Technology Shapes Modern Life</a></li>
+        </ul>
+      </section>
+
+      <!-- Article Footer -->
+      <footer>
+        <p><em>Written by: Jane Doe | Technology Correspondent</em></p>
+        <p><small>© 2025 Daily Times</small></p>
+      </footer>
+    </article>
+
+    <!-- Sidebar -->
+    <aside>
+      <h3>Trending Now</h3>
+      <ul>
+        <li><a href="#">Elections 2025: What to Expect</a></li>
+        <li><a href="#">Sports: Local Team Wins Championship</a></li>
+        <li><a href="#">Health: New Breakthrough in Cancer Research</a></li>
+      </ul>
+
+      <h3>Advertisement</h3>
+      <p>[Your Ad Here]</p>
+    </aside>
+  </main>
+</body>
+</html>
+
