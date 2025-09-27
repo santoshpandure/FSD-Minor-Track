@@ -1,0 +1,261 @@
+Assignment 4
+
+Q1. Embedding External Content: Create an HTML page that embeds content from an external website (e.g., a news site, a public document) using the <iframe> tag. Experiment with src, width, height, and title attributes.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Embedding External Content</title>
+</head>
+<body>
+  <h1>Embedding External Content with &lt;iframe&gt;</h1>
+
+  <!-- Embedding a website -->
+  <h2>Example 1: News Website</h2>
+  <iframe src="https://www.bbc.com" 
+          width="600" 
+          height="400" 
+          title="BBC News Website">
+  </iframe>
+
+  <!-- Embedding a YouTube video -->
+  <h2>Example 2: YouTube Video</h2>
+  <iframe width="560" 
+          height="315" 
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allowfullscreen>
+  </iframe>
+
+  <!-- Embedding a PDF -->
+  <h2>Example 3: Public PDF Document</h2>
+  <iframe src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" 
+          width="600" 
+          height="400" 
+          title="Sample PDF Document">
+  </iframe>
+
+</body>
+</html>
+
+
+Q2. Embedding Interactive Elements: Embed a Google Map or a YouTube video into an HTML page using the <iframe> tag. Pay attention to the allowfullscreen attribute for videos and the specific embed code provided by the service.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Embedding Interactive Elements</title>
+</head>
+<body>
+  <h1>Embedding Interactive Elements with &lt;iframe&gt;</h1>
+
+  <!-- Embedding a YouTube Video -->
+  <h2>YouTube Video Example</h2>
+  <iframe width="560" 
+          height="315" 
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+  </iframe>
+
+  <br><br>
+
+  <!-- Embedding a Google Map -->
+  <h2>Google Map Example</h2>
+  <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11610038035!2d72.74109965!3d19.0821978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63d1f9f0f9b%3A0xf9f0e80d6e12f4d1!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1691509282303!5m2!1sen!2sin"
+          width="600" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Google Map of Mumbai">
+  </iframe>
+
+</body>
+</html>
+
+
+
+Q3. Creating a Nested Browsing Context: Design a simple web page with multiple iframes, where one iframe loads a different HTML document containing another iframe. This demonstrates the concept of nested browsing contexts.
+
+
+index.html (main page)
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nested Browsing Context Example</title>
+</head>
+<body>
+  <h1>Main Page with Iframes</h1>
+
+  <!-- First iframe loading page1.html -->
+  <h2>Iframe 1 (loads page1.html)</h2>
+  <iframe src="page1.html" width="500" height="300" title="First Iframe"></iframe>
+
+  <br><br>
+
+  <!-- Second iframe loading an external site -->
+  <h2>Iframe 2 (loads an external website)</h2>
+  <iframe src="https://example.com" width="500" height="300" title="Second Iframe"></iframe>
+
+</body>
+</html>
+
+
+page1.html (this contains another iframe)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page 1</title>
+</head>
+<body>
+  <h2>This is page1.html inside an iframe</h2>
+  <p>Below is a nested iframe (nested.html).</p>
+
+  <!-- Nested iframe -->
+  <iframe src="nested.html" width="400" height="200" title="Nested Iframe"></iframe>
+</body>
+</html>
+
+nested.html (the innermost document)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nested Page</title>
+</head>
+<body>
+  <h3>This is nested.html</h3>
+  <p>You are now inside a nested iframe (an iframe inside another iframe).</p>
+</body>
+</html>
+
+
+Q4. Using srcdoc: Create an iframe that directly embeds HTML content using the srcdoc attribute, rather than linking to an external file.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Iframe with srcdoc Example</title>
+</head>
+<body>
+  <h1>Main Page</h1>
+  <p>Below is an iframe using <code>srcdoc</code> instead of loading an external file:</p>
+
+  <!-- Iframe using srcdoc -->
+  <iframe 
+    srcdoc="
+      <!DOCTYPE html>
+      <html lang='en'>
+      <head>
+        <meta charset='UTF-8'>
+        <title>Embedded Page</title>
+      </head>
+      <body style='font-family: Arial; background-color: #f0f8ff; text-align: center;'>
+        <h2>Hello from srcdoc!</h2>
+        <p>This HTML is written directly inside the <code>iframe</code> tag.</p>
+        <p style='color: blue;'>No external file is needed 🎉</p>
+      </body>
+      </html>
+    " 
+    width="500" 
+    height="250" 
+    title="Iframe with srcdoc">
+  </iframe>
+
+</body>
+</html>
+
+
+
+
+
+Q5. Embed an audio file (e.g., MP3) into an HTML page using the <audio> tag. Include controls, autoplay, and loop attributes. Provide a fallback message for browsers that do not support the audio format.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Audio Embedding Example</title>
+</head>
+<body>
+  <h1>Audio Example in HTML</h1>
+
+  <!-- Audio player with controls -->
+  <audio controls autoplay loop>
+    <source src="sample.mp3" type="audio/mpeg">
+    <source src="sample.ogg" type="audio/ogg">
+    <!-- Fallback message -->
+    Your browser does not support the audio element. Please 
+    <a href="sample.mp3">download the audio file</a> instead.
+  </audio>
+
+</body>
+</html>
+
+Q6. Embed a video file (e.g., MP4) into an HTMLpage using video tag.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Embedding Example</title>
+</head>
+<body>
+  <h1>Video Example in HTML</h1>
+
+  <!-- Video player with controls -->
+  <video width="600" height="340" controls autoplay loop muted>
+    <source src="sample.mp4" type="video/mp4">
+    <source src="sample.webm" type="video/webm">
+    <source src="sample.ogg" type="video/ogg">
+    <!-- Fallback message -->
+    Your browser does not support the video tag. 
+    Please <a href="sample.mp4">download the video</a> instead.
+  </video>
+</body>
+</html>
+
+
+Q6. Embed a video file (e.g., MP4) into an HTMLpage using video tag.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Embedding Example</title>
+</head>
+<body>
+  <h1>Video Example in HTML</h1>
+
+  <!-- Video player with controls -->
+  <video width="600" height="340" controls autoplay loop muted>
+    <source src="sample.mp4" type="video/mp4">
+    <source src="sample.webm" type="video/webm">
+    <source src="sample.ogg" type="video/ogg">
+    <!-- Fallback message -->
+    Your browser does not support the video tag. 
+    Please <a href="sample.mp4">download the video</a> instead.
+  </video>
+
+</body>
+</html>
