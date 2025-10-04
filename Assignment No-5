@@ -1,0 +1,202 @@
+Q1. Develop and demonstrate the usage of inline, internal style sheet using CSS. 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inline & Internal CSS Example</title>
+  <!-- Internal CSS -->
+  <style>
+    h1 { color: blue; text-align: center; }
+    p { font-size: 18px; color: green; }
+  </style>
+</head>
+<body style="background-color: lightyellow;"> <!-- Inline CSS -->
+  <h1>Welcome to CSS Styling</h1>
+  <p>This paragraph is styled using internal CSS.</p>
+</body>
+</html>
+
+
+
+
+
+
+Q2. Creating a separate .css file and linking it to an HTML document for organized and maintainable styling.
+
+style.css
+
+body {
+  background-color: #f0f8ff;
+  font-family: Arial, sans-serif;
+}
+h1 {
+  color: darkblue;
+  text-align: center;
+}
+p {
+  color: darkgreen;
+  font-size: 18px;
+}
+
+
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>External CSS Example</title>
+  <link rel="stylesheet" href="style.css"> <!-- Linking external CSS -->
+</head>
+<body>
+  <h1>External CSS Styling</h1>
+  <p>This text is styled using an external CSS file.</p>
+</body>
+</html>
+
+
+
+
+Q3. Applying fundamental CSS properties such as color, background-color, font-family, font-size, font-weight,text-align, line-height	
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    p {
+      color: blue;
+      background-color: lightgray;
+      font-family: Verdana;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <p>This is a styled paragraph using basic CSS properties.</p>
+</body>
+</html>
+
+
+Q4. Demonstrating an understanding of the CSS box model by manipulating padding, margin, and border to control element spacing and appearance.
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    div {
+      width: 300px;
+      padding: 20px;
+      border: 5px solid blue;
+      margin: 30px;
+      background-color: lightpink;
+    }
+  </style>
+</head>
+<body>
+  <div>Box Model Example: Padding, Border, and Margin applied.</div>
+</body>
+</html>
+
+
+
+
+
+
+
+Q5. Utilizing different types of CSS selectors (element, class, ID, pseudo-classes like :hover, descendant, etc.) to target specific HTML elements for styling.
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Element Selector */
+    h1 { color: red; }
+
+    /* Class Selector */
+    .highlight { color: green; font-weight: bold; }
+
+    /* ID Selector */
+    #unique { color: blue; font-size: 24px; }
+
+    /* Pseudo-Class Selector */
+    a:hover { color: orange; }
+
+    /* Descendant Selector */
+    div p { font-style: italic; }
+  </style>
+</head>
+<body>
+  <h1>Selectors Example</h1>
+  <p class="highlight">This uses a class selector.</p>
+  <p id="unique">This uses an ID selector.</p>
+  <a href="#">Hover over me!</a>
+  <div><p>This is inside a div (descendant selector).</p></div>
+</body>
+</html>
+
+
+
+
+Q6. Design a webpage using a background image for a section or the entire page, applying CSS properties like background-size, background-position, background-repeat, and background-attachment to control its appearance.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="color:white;">Background Image Example</h1>
+  <p style="color:white;">This page uses a full-screen background image.</p>
+</body>
+</html>
+
+
+
+Q7. Implement headers and footers that remain visible on the screen even when the user scrolls, often referred to as "sticky" or "fixed." 
+Use position: fixed or position: sticky for the header and footer. 
+Set top: 0 for the header and bottom: 0 for the footer. 
+Adjust z-index to ensure they appear above other content.
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; }
+
+    header, footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      background: darkblue;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      z-index: 1000;
+    }
+    header { top: 0; }
+    footer { bottom: 0; }
+
+    main { margin-top: 60px; margin-bottom: 40px; padding: 20px; }
+  </style>
+</head>
+<body>
+  <header>Fixed Header</header>
+  <main>
+    <p>Scroll down to see header and footer remain visible.</p>
+    <p style="height:1000px;">Content area...</p>
+  </main>
+  <footer>Fixed Footer</footer>
+</body>
+</html>
