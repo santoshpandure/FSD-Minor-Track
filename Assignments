@@ -1,0 +1,692 @@
+Assignment 6:  DOM & Events, Dialog boxes in Javascript
+
+
+
+Q1. Write a JavaScript program to print “Hello World !! “ using a dialog box.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello World</title>
+  <script>
+    // Display Hello World using alert
+    alert("Hello World !!");
+  </script>
+</head>
+<body>
+</body>
+</html>
+
+Q2. Write a JavaScript Program to Add Two Numbers
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Two Numbers</title>
+  <script>
+    let a = parseFloat(prompt("Enter first number:"));
+    let b = parseFloat(prompt("Enter second number:"));
+    let sum = a + b;
+    alert("The Sum is: " + sum);
+  </script>
+</head>
+<body>
+</body>
+</html>
+
+
+Q3. Develop and demonstrate JavaScript with POP-UP boxes and functions for the following problems: 
+Input: A number n obtained using prompt 
+Output: A multiplication table of numbers from 1 to 10 of n on web forms
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiplication Table</title>
+  <script>
+    function showTable() {
+      let n = parseInt(prompt("Enter a number:"));
+      document.write("<h2>Multiplication Table of " + n + "</h2>");
+      for (let i = 1; i <= 10; i++) {
+        document.write(n + " x " + i + " = " + (n * i) + "<br>");
+      }
+    }
+  </script>
+</head>
+<body onload="showTable()">
+</body>
+</html>
+
+
+
+
+
+
+ 
+Q4. Use a prompt() dialog to get the new task text from the user when they click an "Add Task" button. Use a confirm() dialog to ask for confirmation before deleting a task.
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Manager</title>
+  <script>
+    function addTask() {
+      let task = prompt("Enter new task:");
+      if (task) {
+        let li = document.createElement("li");
+        li.textContent = task;
+        document.getElementById("taskList").appendChild(li);
+      }
+    }
+
+    function deleteTask() {
+      let confirmation = confirm("Are you sure you want to delete all tasks?");
+      if (confirmation) {
+        document.getElementById("taskList").innerHTML = "";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Task Manager</h2>
+  <button onclick="addTask()">Add Task</button>
+  <button onclick="deleteTask()">Delete All Tasks</button>
+  <ul id="taskList"></ul>
+</body>
+</html>
+
+
+
+
+Q5. Use alert() to display an error message if the user tries to divide by zero.
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Division</title>
+  <script>
+    function divide() {
+      let a = parseFloat(prompt("Enter numerator:"));
+      let b = parseFloat(prompt("Enter denominator:"));
+
+      if (b === 0) {
+        alert("Error: Cannot divide by zero!");
+      } else {
+        alert("Result: " + (a / b));
+      }
+    }
+  </script>
+</head>
+<body onload="divide()">
+</body>
+</html>
+
+
+
+
+Q6. Create a form having number of elements (Textboxes, Radio buttons, Checkboxes,and so on). Write JavaScript code to count the number of elements in a form. [ hint call one function on button click and display the message using alert box - document.[“formId”].length] 
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Count Form Elements</title>
+  <script>
+    function countElements() {
+      let formLength = document.forms["myForm"].length;
+      alert("Number of elements in the form: " + formLength);
+    }
+  </script>
+</head>
+<body>
+  <form name="myForm">
+    Name: <input type="text"><br>
+    Gender: <input type="radio" name="gender">Male
+    <input type="radio" name="gender">Female<br>
+    Hobbies: <input type="checkbox">Reading
+    <input type="checkbox">Traveling<br>
+    <input type="button" value="Count Elements" onclick="countElements()">
+  </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+Q7- Write a program to accept marks of 3 subjects and find total marks and also display the class obtained.
+
+Marks Range
+Grade
+<40%
+F
+50 to 60%
+E
+60 to 70%
+D
+70 to 80%
+C
+80 to 90%
+B
+90% & Above
+A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculate Grade</title>
+  <script>
+    function calculateGrade() {
+      let m1 = parseFloat(prompt("Enter marks of Subject 1:"));
+      let m2 = parseFloat(prompt("Enter marks of Subject 2:"));
+      let m3 = parseFloat(prompt("Enter marks of Subject 3:"));
+
+      let total = m1 + m2 + m3;
+      let percentage = (total / 300) * 100;
+      let grade = "";
+
+      if (percentage < 40) grade = "F";
+      else if (percentage >= 50 && percentage < 60) grade = "E";
+      else if (percentage >= 60 && percentage < 70) grade = "D";
+      else if (percentage >= 70 && percentage < 80) grade = "C";
+      else if (percentage >= 80 && percentage < 90) grade = "B";
+      else if (percentage >= 90) grade = "A";
+
+      alert("Total Marks: " + total + "\nPercentage: " + percentage.toFixed(2) + "%\nGrade: " + grade);
+    }
+  </script>
+</head>
+<body onload="calculateGrade()">
+</body>
+</html>
+
+
+Assignment 7: Function & Array Based on Javascript
+
+
+Q1. Write a javascript program to find a maximum of two numbers using a function.
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Maximum of Two Numbers</title>
+  <script>
+    function findMax(a, b) {
+      return (a > b) ? a : b;
+    }
+
+    let num1 = parseFloat(prompt("Enter first number:"));
+    let num2 = parseFloat(prompt("Enter second number:"));
+    alert("Maximum is: " + findMax(num1, num2));
+  </script>
+</head>
+<body>
+</body>
+</html>
+
+Q2. Write a javascript program to reverse a string using function.
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reverse String</title>
+  <script>
+    function reverseString(str) {
+      return str.split("").reverse().join("");
+    }
+
+    let input = prompt("Enter a string:");
+    alert("Reversed String: " + reverseString(input));
+  </script>
+</head>
+<body>
+</body>
+</html>
+
+
+
+Q3. Write a javascript program to print sum of all array elements.
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sum of Array</title>
+  <script>
+    function sumArray(arr) {
+      let sum = 0;
+      for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+      }
+      return sum;
+    }
+
+    let numbers = [10, 20, 30, 40, 50];
+    alert("Sum of Array Elements: " + sumArray(numbers));
+  </script>
+</head>
+<body>
+</body>
+</html>
+
+
+
+Q4. Create HTML form with a button. 
+JavaScript: Define an array of numbers. Write a function that, when the button is clicked, performs the following operations on the array: 
+Adds a new number to the end. 
+Removes the first element. 
+Sorts the array in ascending order. 
+Displays the updated array in the console or within an HTML element.
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array Operations</title>
+  <script>
+    let numbers = [5, 2, 8, 1, 7];
+
+    function updateArray() {
+      numbers.push(10); // Add new number at end
+      numbers.shift(); // Remove first element
+      numbers.sort((a, b) => a - b); // Sort ascending
+
+      document.getElementById("result").innerHTML = "Updated Array: " + numbers.join(", ");
+    }
+  </script>
+</head>
+<body>
+  <h2>Array Operations</h2>
+  <button onclick="updateArray()">Perform Operations</button>
+  <p id="result"></p>
+</body>
+</html>
+
+
+
+Q5. Build a basic calculator interface with number buttons, operator buttons, and a display area. (Use functions)
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <script>
+    let displayValue = "";
+
+    function appendValue(value) {
+      displayValue += value;
+      document.getElementById("display").value = displayValue;
+    }
+
+    function calculate() {
+      document.getElementById("display").value = eval(displayValue);
+      displayValue = "";
+    }
+
+    function clearDisplay() {
+      displayValue = "";
+      document.getElementById("display").value = "";
+    }
+  </script>
+</head>
+<body>
+  <h2>Basic Calculator</h2>
+  <input type="text" id="display" readonly><br><br>
+  <button onclick="appendValue('1')">1</button>
+  <button onclick="appendValue('2')">2</button>
+  <button onclick="appendValue('3')">3</button>
+  <button onclick="appendValue('+')">+</button><br><br>
+
+  <button onclick="appendValue('4')">4</button>
+  <button onclick="appendValue('5')">5</button>
+  <button onclick="appendValue('6')">6</button>
+  <button onclick="appendValue('-')">-</button><br><br>
+
+  <button onclick="appendValue('7')">7</button>
+  <button onclick="appendValue('8')">8</button>
+  <button onclick="appendValue('9')">9</button>
+  <button onclick="appendValue('*')">*</button><br><br>
+
+  <button onclick="appendValue('0')">0</button>
+  <button onclick="appendValue('/')">/</button>
+  <button onclick="calculate()">=</button>
+  <button onclick="clearDisplay()">C</button>
+</body>
+</html>
+
+
+
+Q6. Create a HTML form which contains number & button elements. Create a javascript function to calculate factorial of number which is entered into number input field after clicking on button.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Factorial Calculator</title>
+  <script>
+    function factorial() {
+      let num = document.getElementById("number").value;
+      let fact = 1;
+
+      for (let i = 1; i <= num; i++) {
+        fact *= i;
+      }
+
+      alert("Factorial of " + num + " is: " + fact);
+    }
+  </script>
+</head>
+<body>
+  <h2>Factorial Calculator</h2>
+  <input type="number" id="number" placeholder="Enter a number">
+  <button onclick="factorial()">Calculate Factorial</button>
+</body>
+</html>
+
+
+
+
+Q7. Create an HTML file with a div element with an ID (e.g., output). 
+JavaScript: Define an array of your favorite fruits. Write a function that takes this array as an argument and dynamically adds each fruit as a list item (<li>) inside an unordered list (<ul>) within the output div.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Favorite Fruits</title>
+  <script>
+    let fruits = ["Apple", "Banana", "Mango", "Orange"];
+
+    function showFruits() {
+      let outputDiv = document.getElementById("output");
+      let ul = document.createElement("ul");
+
+      for (let fruit of fruits) {
+        let li = document.createElement("li");
+        li.textContent = fruit;
+        ul.appendChild(li);
+      }
+
+      outputDiv.appendChild(ul);
+    }
+  </script>
+</head>
+<body onload="showFruits()">
+  <h2>My Favorite Fruits</h2>
+  <div id="output"></div>
+</body>
+</html>
+
+
+
+Assignment 8: Form Validation & Regular Expressions
+
+
+Q1. Create an HTML document with a form containing various input fields (e.g., text, email, password, number, checkbox). 
+Include id attributes for easy access to form elements in JavaScript. 
+Add elements to display error messages for each input field (e.g., <span> or <div> elements).
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form with Error Messages</title>
+  <style>
+    .error { color: red; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form id="myForm">
+    <label>Name:</label>
+    <input type="text" id="name"><span id="nameError" class="error"></span><br><br>
+
+    <label>Email:</label>
+    <input type="email" id="email"><span id="emailError" class="error"></span><br><br>
+
+    <label>Password:</label>
+    <input type="password" id="password"><span id="passwordError" class="error"></span><br><br>
+
+    <label>Age:</label>
+    <input type="number" id="age"><span id="ageError" class="error"></span><br><br>
+
+    <label>
+      <input type="checkbox" id="terms"> Accept Terms & Conditions
+    </label>
+    <span id="termsError" class="error"></span><br><br>
+
+    <button type="button" onclick="validateForm()">Submit</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      document.getElementById("nameError").innerHTML = 
+      document.getElementById("emailError").innerHTML = 
+      document.getElementById("passwordError").innerHTML = 
+      document.getElementById("ageError").innerHTML =
+      document.getElementById("termsError").innerHTML = "";
+
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+      let age = document.getElementById("age").value;
+      let terms = document.getElementById("terms").checked;
+      let valid = true;
+
+      if (name === "") { document.getElementById("nameError").innerHTML = "Name is required"; valid = false; }
+      if (email === "") { document.getElementById("emailError").innerHTML = "Email is required"; valid = false; }
+      if (password === "") { document.getElementById("passwordError").innerHTML = "Password is required"; valid = false; }
+      if (age === "") { document.getElementById("ageError").innerHTML = "Age is required"; valid = false; }
+      if (!terms) { document.getElementById("termsError").innerHTML = "You must accept terms"; valid = false; }
+
+      if (valid) alert("Form submitted successfully!");
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+Q2. Write a JavaScript function that takes a string as input and uses a regular expression to determine if it's a valid email address. 
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q2 - Email Validation</title>
+</head>
+<body>
+  <h2>Email Validation</h2>
+  <input type="text" id="emailInput" placeholder="Enter email">
+  <button onclick="checkEmail()">Check Email</button>
+  <p id="emailResult"></p>
+
+<script>
+function checkEmail() {
+  let email = document.getElementById("emailInput").value;
+  let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  document.getElementById("emailResult").innerHTML = pattern.test(email) ? "Valid Email" : "Invalid Email";
+}
+</script>
+</body>
+</html>
+
+Q3. Write a javascript program to validate phone number using regular expression
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q3 - Phone Validation</title>
+</head>
+<body>
+  <h2>Phone Number Validation</h2>
+  <input type="text" id="phoneInput" placeholder="Enter phone number">
+  <button onclick="checkPhone()">Check Phone</button>
+  <p id="phoneResult"></p>
+
+<script>
+function checkPhone() {
+  let phone = document.getElementById("phoneInput").value;
+  let pattern = /^[6-9]\d{9}$/;
+  document.getElementById("phoneResult").innerHTML = pattern.test(phone) ? "Valid Phone Number" : "Invalid Phone Number";
+}
+</script>
+</body>
+</html>
+
+
+
+Q4. Write a javascript program to validate url using regular expression
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q4 - URL Validation</title>
+</head>
+<body>
+  <h2>URL Validation</h2>
+  <input type="text" id="urlInput" placeholder="Enter URL">
+  <button onclick="checkURL()">Check URL</button>
+  <p id="urlResult"></p>
+
+<script>
+function checkURL() {
+  let url = document.getElementById("urlInput").value;
+  let pattern = /^(https?:\/\/)?([\w.-]+)\.([a-z]{2,})([\/\w.-]*)*\/?$/i;
+  document.getElementById("urlResult").innerHTML = pattern.test(url) ? "Valid URL" : "Invalid URL";
+}
+</script>
+</body>
+</html>
+
+Q5. Create an HTML document with Reset username form containing various input fields (username,password, Write a javascript with below validation logic:
+Required Fields: Ensure mandatory fields are not empty.
+Length Constraints: Check minimum/maximum length for text or password fields.
+Password Matching: If applicable, ensure "password" and "confirm password" fields match.
+Error Display: If validation fails, display an appropriate error message next to the invalid input field.
+Conditional Submission: If all validation checks pass, allow the form to submit (or perform an action like displaying a success message).
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q5 - Reset Username</title>
+  <style>.error {color:red; font-size:12px;}</style>
+</head>
+<body>
+  <h2>Reset Username</h2>
+  Username: <input type="text" id="username"><span id="userError" class="error"></span><br><br>
+  Password: <input type="password" id="pass"><span id="passError" class="error"></span><br><br>
+  Confirm Password: <input type="password" id="confirm"><span id="confirmError" class="error"></span><br><br>
+  <button type="button" onclick="validateResetForm()">Submit</button>
+
+<script>
+function validateResetForm() {
+  document.getElementById("userError").innerHTML = "";
+  document.getElementById("passError").innerHTML = "";
+  document.getElementById("confirmError").innerHTML = "";
+
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("pass").value;
+  let confirm = document.getElementById("confirm").value;
+  let valid = true;
+
+  if (username.length < 3 || username.length > 15) { document.getElementById("userError").innerHTML = "3-15 chars required"; valid = false; }
+  if (password.length < 6) { document.getElementById("passError").innerHTML = "Min 6 chars required"; valid = false; }
+  if (password !== confirm) { document.getElementById("confirmError").innerHTML = "Passwords don't match"; valid = false; }
+
+  if (valid) alert("Reset successful!");
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+Q6. Write a function that uses regular expressions to determine if a given string is a palindrome, ignoring non-alphanumeric characters and case.
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q6 - Palindrome Check</title>
+</head>
+<body>
+  <h2>Palindrome Check</h2>
+  <input type="text" id="palInput" placeholder="Enter text">
+  <button onclick="checkPalindrome()">Check Palindrome</button>
+  <p id="palResult"></p>
+
+<script>
+function checkPalindrome() {
+  let str = document.getElementById("palInput").value;
+  let clean = str.replace(/[^a-z0-9]/gi, '').toLowerCase();
+  document.getElementById("palResult").innerHTML = (clean === clean.split('').reverse().join('')) ? "Palindrome" : "Not a Palindrome";
+}
+</script>
+</body>
+</html>
+
+
+Q7. Write a function that counts the number of vowels or consonants in a string using regular expressions and character classes.
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q7 - Vowel & Consonant Count</title>
+</head>
+<body>
+  <h2>Count Vowels & Consonants</h2>
+  <input type="text" id="vcInput" placeholder="Enter text">
+  <button onclick="countVC()">Count</button>
+  <p id="vcResult"></p>
+
+<script>
+function countVC() {
+  let str = document.getElementById("vcInput").value;
+  let vowels = (str.match(/[aeiou]/gi) || []).length;
+  let consonants = (str.match(/[bcdfghjklmnpqrstvwxyz]/gi) || []).length;
+  document.getElementById("vcResult").innerHTML = "Vowels: " + vowels + ", Consonants: " + consonants;
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
